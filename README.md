@@ -1,4 +1,4 @@
-This project was originally uploaded in Portuguese and was translated to English.
+This project was originally uploaded in Portuguese and translated to English.
 
 Project source:
 https://github.com/agamenonPereira/BlockchainDemo
