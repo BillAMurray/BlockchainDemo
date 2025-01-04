@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Blockchain";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Blockchain</h1>
+	</div>
+</div>
+
+<div class="row" style="padding:10px;">
+    <div id="ControlBar" class="col-md-12">
+        <button type="button" class="btn btn-success" onclick="AddBlock()">Add Block</button>
+        <button type="button" class="btn btn-danger" onclick="RemovePreviousBlockChain()">Remove Last Block</button>
+	</div>
+</div>
+
+<div id="Blockchain"></div>
+
+@section Comments{
+}
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            GetBlockchain();
+        });
+    </script>
+}
+
+

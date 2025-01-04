@@ -1,0 +1,66 @@
+﻿@model Block
+
+@{
+    ViewData["Title"] = "Block";
+}
+
+<div class="row">
+    <div class="col-md-2">
+        <h1>Block</h1>
+	</div>
+    <div class="col-md-10">
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal" id="form" style="background-color:#D1F3B0;padding:10px;border-radius:5px;">
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="control-label" for="BlockIndex"><b>Block</b></label>
+                </div>
+                <div class="input-group col-md-10">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="blockindex-1">#</span>
+                    </div>
+                    <input asp-for="BlockIndex" class="form-control" id="BlockIndex" type="number" onkeyup="InvalidateHash('#form')" onchange="InvalidateHash('#form')">
+                </div>
+			</div>
+
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="control-label" for="nonce"><b>Nonce</b></label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="Nonce" class="form-control" id="Nonce" type="number" onkeyup="InvalidateHash('#form')" onchange="InvalidateHash('#form')">
+                </div>
+			</div>
+
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="control-label" for="Data"><b>Data</b></label>
+                </div>
+                <div class="col-md-10">
+                    <textarea asp-for="Data" class="form-control" id="Data" rows="6" onkeyup="InvalidateHash('#form')" onchange="InvalidateHash('#form')"></textarea>
+                </div>
+			</div>
+
+            <div class="form-group row">
+                <div class="col-md-2">
+                    <label class="control-label" for="Hash"><b>Hash</b></label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="Hash" class="form-control" id="Hash" type="text" disabled>
+                </div>
+			</div>
+
+            <div class="form-group row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <button type="button" class="btn btn-info" onclick="MineBlock('#form')">Mine</button>
+                </div>
+			</div>
+        </form>
+	</div>
+</div>
